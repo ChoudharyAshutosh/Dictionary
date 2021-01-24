@@ -23,7 +23,7 @@ class App extends Component{
   render(){
   return (
     <div className="AppBackgorund">
-      
+    <img className="App-logo" src={logo} alt="My logo" />      
       <div className="App" id='container'>
       <div className='search-container'>
       <p className='dictionary-label'>Dictionary</p>

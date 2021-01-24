@@ -69,7 +69,10 @@ button{
   text-decoration: none;
 }
 .App-logo {
-  height: 40vmin;
+  margin-top: 0.7%;
+  position: fixed;
+  float: left;
+  height: 8% !important;
   pointer-events: none;
 }
 
