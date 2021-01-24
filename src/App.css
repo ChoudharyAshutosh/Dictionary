@@ -1,7 +1,73 @@
 .App {
   text-align: center;
+  background-color: steelblue;
+  display: flex;
+  height: 100vh;
+  flex-direction: column;
+  justify-content: center;
+  overflow: hidden;
+  animation: center-animate 1s ease;
 }
-
+.content{
+  background-color: white;
+  height:100vh;
+}
+@keyframes center-animate {
+  0% { transform: translateY(140px) }
+  100% { transform: translateY(0px) }
+}
+@keyframes top-animate {
+  0% { transform: translateY(140px) }
+  100% { transform: translateY(0px) }
+}
+.AppBackgorund{
+  background-color: steelblue;
+  height: 100vh;
+  overflow: hidden;
+}
+.container{
+  text-align: center;
+  height: fit-content;
+  transition: height 0.3s;
+  animation: top-animate 1s ease;
+  background-color: steelblue;
+  overflow: hidden;
+}
+.dictionary-label{
+  background-color: #03032b;
+  color:white;
+  outline: none;
+}
+input, button{
+  font-size: 110% !important;
+  padding:0.5% !important;
+  outline: none;
+  text-decoration: none;
+}
+p{
+  display: inline-block;
+  font-size: 110%;
+  padding:0.5% 0% 0.67% 1%;
+  width:12%;
+  text-align: left;
+  border-top-left-radius: 5px;
+  border-bottom-left-radius: 5px;
+  text-decoration: none;
+}
+button{
+  margin: 0%;
+  border: 0px;
+  padding: 0.55% 0.8% !important;
+  border-top-right-radius: 5px;
+  border-bottom-right-radius: 5px;
+  text-transform: none;
+  background-color: #c1bbbb;
+}
+.search-icon{
+  background-color: #c1bbbb;
+  color:#d89518;
+  text-decoration: none;
+}
 .App-logo {
   height: 40vmin;
   pointer-events: none;
