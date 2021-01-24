@@ -8,9 +8,12 @@
   overflow: hidden;
   animation: center-animate 1s ease;
 }
-.content{
-  background-color: white;
+#content{
+  background-color: rgb(148, 141, 141);
   height:100vh;
+  display: flex;
+  flex-direction: column;
+  padding: 0% 30% !important;
 }
 @keyframes center-animate {
   0% { transform: translateY(140px) }

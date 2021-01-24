@@ -1,0 +1,19 @@
+.conten-data{
+    background-color: white;
+}
+#noun, #verb{
+    background-color: #03032b;
+    color:white;
+    border-radius: 0px;
+    outline: none;
+    width:49.9%;
+    text-align: center;
+    margin:0px;
+    padding:2% 0%;
+}
+.helping-text{
+    display: inline-block;
+}
+#verb2{
+    display: none;
+}
