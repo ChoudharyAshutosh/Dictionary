@@ -7,7 +7,7 @@ class RenderData extends Component{
         console.log(11,data)
         if(data!=='')
         return(
-            <div id={id}>
+            <div id={id} class='data'>
                 <ol>
             {
                 data.map((description)=>{
@@ -15,7 +15,7 @@ class RenderData extends Component{
                     {index2=1}
                     if(!description.subsenses)
                     return(
-                        <li key={description.id}>
+                        <li className='space' key={description.id}>
                             {description.definitions}
                         </li>           
                     )
@@ -25,7 +25,7 @@ class RenderData extends Component{
                             {description.definitions}
                                 {description.subsenses.map((defination)=>{
                                     {index2++}
-                                return <span className='helping-text'>{index-1}.{index2-1} {defination.definitions[0]}</span>
+                                return <span className='helping-text space'>{index-1}.{index2-1} {defination.definitions[0]}</span>
                                 })}
                             
                         </li>    
@@ -38,7 +38,7 @@ class RenderData extends Component{
     }
     render(){
     return(
-        <div className='conten-data'>
+        <div className='content-data'>
             <div>
             <p id='noun'>Noun</p>
             <p id='verb'>Verb</p>
@@ -51,4 +51,4 @@ class RenderData extends Component{
     )
 }
 }
-export default RenderData;
+export default RenderData;  

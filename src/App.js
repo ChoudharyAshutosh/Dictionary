@@ -29,7 +29,7 @@ class App extends Component{
           'app_id': "79a9e214",
           'app_key': "14b261fc3cff818b5d53a8444511fee9"
       }
-    };
+    }
 
     http.get(options, (resp) => {
         let body = '';
