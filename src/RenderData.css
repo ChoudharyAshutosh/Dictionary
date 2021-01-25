@@ -38,7 +38,11 @@
 .word{
     color:black;
 }
+.meaning-text{
+    display: block;
+}
 .space{
+    display: inline-block;
     padding: 2% 0% !important; 
 }
 #content-heading{

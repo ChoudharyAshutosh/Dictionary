@@ -17,13 +17,13 @@ class RenderData extends Component{
                                 if(!description.subsenses)
                                 return(
                                     <li className='space' key={description.id}>
-                                        {description.definitions}
+                                        <span className='meaning-text'>{description.definitions}</span>
                                     </li>           
                                 )
                                 else
                                 return(
                                     <li key={description.id}>
-                                        {description.definitions}
+                                        <span className='meaning-text'>{description.definitions}</span>
                                             {description.subsenses.map((defination)=>{
                                                 {index2++}
                                                 return(
