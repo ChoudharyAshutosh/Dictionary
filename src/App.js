@@ -11,6 +11,7 @@ class App extends Component{
     super(props);
     this.state={noun:'',verb:''}
   }
+  //Getting data from api
   getdata=()=>{
     this.setState({noun:'*',verb:'*'})
     document.getElementById('content-heading').style.display='none';
@@ -47,6 +48,7 @@ class App extends Component{
             }
         });
     });
+    //For front page animation
     if(loaded===0){
         document.getElementById('container').setAttribute('class','container');
         document.getElementById('content').setAttribute('class','content');

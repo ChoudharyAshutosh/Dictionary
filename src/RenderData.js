@@ -1,6 +1,7 @@
 import React,{Component} from 'react';
 import './RenderData.css';
 class RenderData extends Component{
+    //Rendering data
     renderData=(data, id)=>{
         let index=1;
         let index2=1;
@@ -58,11 +59,13 @@ class RenderData extends Component{
             )
         }
     }
+    //Switching noun and verb tab
     showNoun=()=>{
         if(document.getElementById('noun2')){
             document.getElementById('verb2').style.display='none';
             document.getElementById('noun2').style.display='flex';}
         }
+    //Switching noun and verb tab
     showVerb=()=>{
         if(document.getElementById('verb2')){
             document.getElementById('noun2').style.display='none';
