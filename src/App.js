@@ -12,14 +12,13 @@ class App extends Component{
     this.state={noun:'',verb:''}
   }
   getdata=()=>{
-    this.setState({noun:'',verb:''})
-    alert('hello')
+    this.setState({noun:'*',verb:'*'})
+    document.getElementById('content-heading').style.display='none';
     let word=document.getElementById('word').value;
     if(word==='')
       return;
     const fields = "definitions";
     const strictMatch = "false";
-
     const options = {
       host: 'cors-anywhere.herokuapp.com/od-api.oxforddictionaries.com',
       port: '443',
@@ -30,58 +29,49 @@ class App extends Component{
           'app_key': "14b261fc3cff818b5d53a8444511fee9"
       }
     }
-
-    http.get(options, (resp) => {
+  http.get(options, (resp) => {
         let body = '';
         resp.on('data', (d) => {
             body += d;
         });
         resp.on('end', () => {
-            if(body)
-            {
+            if(body){
                 let parsed = JSON.parse(body);
-
-              var output = parsed.results[0].lexicalEntries  // axact address 
-              this.setState({noun:output[0].entries[0].senses,verb:output[1].entries[0].senses})
-              var attribute = output.map((innerObject)=>{
-                return innerObject.lexicalCategory.id;
-              })
-              console.log(this.state)
-              //console.log(attribute)
-              /*  this.setState({
-                    fetchSuccessful : true,
-                    category : attribute
-                })   */
+                if(!parsed.results)
+                this.setState({noun:'#',verb:'#',word:word})    
+                else{
+                  var output = parsed.results[0].lexicalEntries  // axact address 
+                  if(output[0].entries && output[1].entries)
+                  this.setState({noun:output[0].entries[0].senses,verb:output[1].entries[0].senses})
+                }
             }
         });
     });
-    if(loaded==0){
-    document.getElementById('container').setAttribute('class','container');
-    document.getElementById('content').setAttribute('class','content');
-    loaded=1;
+    if(loaded===0){
+        document.getElementById('container').setAttribute('class','container');
+        document.getElementById('content').setAttribute('class','content');
+        loaded=1;
     }
   }
-  
   render(){
-  return (
-    <div className="AppBackgorund">
-    <img className="App-logo" src={logo} alt="My logo" />      
-      <div className="App" id='container'>
-      <div className='search-container'>
-      <p className='dictionary-label'>Dictionary</p>
-      <input type='text' id='word' placeholder='Search Phase or Word'></input>
-      <button onClick={this.getdata}><FontAwesomeIcon className='search-icon' icon={faSearch}></FontAwesomeIcon></button>
+    return (
+      <div className="AppBackgorund">
+      <img className="App-logo" src={logo} alt="My logo" />      
+        <div className="App" id='container'>
+          <div className='search-container'>
+          <p className='dictionary-label'>Dictionary</p>
+          <input type='text' id='word' placeholder='Search Phase or Word'></input>
+          <button onClick={this.getdata}><FontAwesomeIcon className='search-icon' icon={faSearch}></FontAwesomeIcon></button>
+          </div>
+          <div id='content'>
+            <div>
+              <RenderData data={this.state}/>
+            </div>                  
+          </div>
+        </div>
       </div>
-      <div id='content'>
-        <div>
-          <RenderData data={this.state}/>
-          </div>                  
-      </div>
-    </div>
-
-    </div>
-  );
-}
+    );
+  }
 }
 
 export default App;

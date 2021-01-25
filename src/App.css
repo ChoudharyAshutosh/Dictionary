@@ -8,13 +8,11 @@
   overflow: hidden;
   animation: center-animate 1s ease;
 }
-
-#content{
-  background-color: rgb(148, 141, 141);
+.content{
+  display: block !important;
+  background-color: #c7c4c4;
   height:100vh;
-  display: flex;
-  flex-direction: column;
-  padding: 0% 30% !important;
+  padding:0% 30% !important;
 }
 @keyframes center-animate {
   0% { transform: translateY(140px) }
@@ -79,13 +77,24 @@ button{
   height: 8% !important;
   pointer-events: none;
 }
-
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+.App-link {
+  color: #61dafb;
+}
 @keyframes App-logo-spin {
   from {
     transform: rotate(0deg);

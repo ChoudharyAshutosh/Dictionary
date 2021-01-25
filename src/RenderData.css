@@ -1,5 +1,6 @@
 .content-data{
     background-color: white;
+    overflow-y: scroll;
 }
 #noun, #verb{
     background-color: #03032b;
@@ -19,9 +20,27 @@
     display: none;
 }
 .data{
+    height:81vh;
     padding:1%;
     text-align: left !important;
 }
+.error-message,.progress{
+    height:91vh;
+    color:gray;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.progress-icon{
+    height: 10%;
+    width: 10%;
+}
+.word{
+    color:black;
+}
 .space{
-    margin-bottom: 2%;
+    padding: 2% 0% !important; 
+}
+#content-heading{
+    display: none;
 }
