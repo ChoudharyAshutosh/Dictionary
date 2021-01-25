@@ -13,11 +13,11 @@ class App extends Component{
   }
   //Getting data from api
   getdata=()=>{
-    this.setState({noun:'*',verb:'*'})
     document.getElementById('content-heading').style.display='none';
     let word=document.getElementById('word').value;
     if(word==='')
       return;
+      this.setState({noun:'*',verb:'*'})
     const fields = "definitions";
     const strictMatch = "false";
     const options = {
@@ -52,6 +52,8 @@ class App extends Component{
     if(loaded===0){
         document.getElementById('container').setAttribute('class','container');
         document.getElementById('content').setAttribute('class','content');
+        document.getElementById('dictionary-label').classList.toggle('dictionary-label');
+        document.getElementById('dictionary-label').classList.toggle('dictionary-label-updated')
         loaded=1;
     }
   }
@@ -61,7 +63,7 @@ class App extends Component{
       <img className="App-logo" src={logo} alt="My logo" />      
         <div className="App" id='container'>
           <div className='search-container'>
-          <p className='dictionary-label'>Dictionary</p>
+          <p className='dictionary-label' id='dictionary-label'>Dictionary</p>
           <input type='text' id='word' placeholder='Search Phase or Word'></input>
           <button onClick={this.getdata}><FontAwesomeIcon className='search-icon' icon={faSearch}></FontAwesomeIcon></button>
           </div>

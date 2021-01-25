@@ -40,6 +40,21 @@
   color:white;
   outline: none;
 }
+.dictionary-label-updated{
+  background-color: #03032b;
+  color: white;
+  font-size: small;
+  height: 20px;
+  outline: none;
+  padding-top: 0.3%;
+  padding-bottom: 0.95%;
+}
+.search-container{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
 input, button{
   font-size: 110% !important;
   padding:0.5% !important;
