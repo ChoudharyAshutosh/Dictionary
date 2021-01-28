@@ -12,6 +12,9 @@
     margin:0px;
     padding:2% 0%;
 }
+#noun{
+    border-bottom: 2px solid darkmagenta;
+}
 .helping-text{
     display: inline-block;
     color:gray;

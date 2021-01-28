@@ -63,13 +63,17 @@ class RenderData extends Component{
     showNoun=()=>{
         if(document.getElementById('noun2')){
             document.getElementById('verb2').style.display='none';
-            document.getElementById('noun2').style.display='flex';}
+            document.getElementById('noun2').style.display='flex';
+            document.getElementById('verb').style.borderBottom="initial";
+            document.getElementById('noun').style.borderBottom="2px solid darkmagenta";}
         }
     //Switching noun and verb tab
     showVerb=()=>{
         if(document.getElementById('verb2')){
             document.getElementById('noun2').style.display='none';
-            document.getElementById('verb2').style.display='flex';}
+            document.getElementById('verb2').style.display='flex';
+            document.getElementById('noun').style.borderBottom="initial";
+            document.getElementById('verb').style.borderBottom="2px solid darkmagenta";}
         }
     render(){
         return(
