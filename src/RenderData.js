@@ -3,7 +3,7 @@ import './RenderData.css';
 class RenderData extends Component{
     //Rendering data
     renderData=(data, id)=>{
-        let index=1;
+        let index=0;
         let index2=1;
         if(data!=='*' && data!=='#' && data!==''){
             document.getElementById('content-heading').style.display='block';
@@ -12,11 +12,11 @@ class RenderData extends Component{
                     <ol  key={id+'list'}>
                         {
                             data.map((description)=>{
-                                {index++}
+                                {index+=1}
                                 {index2=1}
                                 if(!description.subsenses)
                                 return(
-                                    <li className='space' key={description.id}>
+                                    <li key={description.id}>
                                         <span className='meaning-text'>{description.definitions}</span>
                                     </li>           
                                 )
@@ -28,7 +28,7 @@ class RenderData extends Component{
                                                 {index2++}
                                                 return(
                                                     <span className='helping-text space' key={defination.id}>
-                                                        {index-1}.{index2-1} {defination.definitions[0]}
+                                                        {index}.{index2-1} {defination.definitions[0]}
                                                     </span>
                                                 )
                                             })}
@@ -65,6 +65,8 @@ class RenderData extends Component{
             document.getElementById('verb2').style.display='none';
             document.getElementById('noun2').style.display='flex';
             document.getElementById('verb').style.borderBottom="initial";
+            document.getElementById('verb').style.paddingBottom="1.9%";
+            document.getElementById('noun').style.paddingBottom="1.5%";
             document.getElementById('noun').style.borderBottom="2px solid darkmagenta";}
         }
     //Switching noun and verb tab
@@ -73,6 +75,8 @@ class RenderData extends Component{
             document.getElementById('noun2').style.display='none';
             document.getElementById('verb2').style.display='flex';
             document.getElementById('noun').style.borderBottom="initial";
+            document.getElementById('noun').style.paddingBottom="1.9%";
+            document.getElementById('verb').style.paddingBottom="1.5%";
             document.getElementById('verb').style.borderBottom="2px solid darkmagenta";}
         }
     render(){

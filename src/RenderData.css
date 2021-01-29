@@ -14,6 +14,7 @@
 }
 #noun{
     border-bottom: 2px solid darkmagenta;
+    padding-bottom: 1.5%;
 }
 .helping-text{
     display: inline-block;
@@ -43,10 +44,11 @@
 }
 .meaning-text{
     display: block;
+    padding-bottom: 3% !important;
 }
 .space{
     display: inline-block;
-    padding: 2% 0% !important; 
+    padding-bottom: 3% !important; 
 }
 #content-heading{
     display: none;
